@@ -1,0 +1,1 @@
+`emperor`与`vassals`都配置了uid与gid为普通用户, 但`emperor`生成的日志文件属主依然是root, 但emperor进程的启动用户为uid字段指定用户, 并且vassals生成的日志文件与sock文件属主是uid指定的用户, 所以要注意目录及权限的配置问题

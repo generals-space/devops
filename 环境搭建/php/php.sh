@@ -46,6 +46,7 @@ compile ()
   ## ./configure \
   cd $source_path && ./configure \
   --prefix=$prefix \
+  --with-config-file-path=$prefix/etc \
   --enable-inline-optimization \
   --enable-pcntl --enable-mysqlnd \
   --enable-opcache --enable-sockets \
@@ -77,7 +78,7 @@ begin(){
   source_path=$base_dir/$unpkg
 
   ## 安装依赖
-  pre_install
+  ## pre_install
   ## 解压到当前目录
   tar -zxf $pkg
   ## 源码编译

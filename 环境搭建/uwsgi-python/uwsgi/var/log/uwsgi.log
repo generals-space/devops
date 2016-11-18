@@ -1,0 +1,949 @@
+*** Starting uWSGI 2.0.14 (64bit) on [Thu Oct 20 05:04:07 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/project
+writing pidfile to var/run/uwsgi.pid
+detected binary path: /usr/local/uwsgi/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x232add0
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+spawned uWSGI master process (pid: 114844)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Thu Oct 20 05:04:07 2016 - [emperor] vassal jumpserver.ini has been spawned
+Thu Oct 20 05:04:07 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Thu Oct 20 05:04:07 2016 - [emperor] vassal flask.ini has been spawned
+Thu Oct 20 05:04:07 2016 - [emperor] vassal flask.ini is ready to accept requests
+*** Starting uWSGI 2.0.14 (64bit) on [Thu Oct 20 05:04:28 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/project
+writing pidfile to var/run/uwsgi.pid
+detected binary path: /usr/local/uwsgi/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xf32dd0
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+spawned uWSGI master process (pid: 114880)
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+Thu Oct 20 05:04:28 2016 - [emperor] vassal flask.ini has been spawned
+Thu Oct 20 05:04:28 2016 - [emperor] vassal flask.ini is ready to accept requests
+Thu Oct 20 05:04:28 2016 - [emperor] vassal jumpserver.ini has been spawned
+Thu Oct 20 05:04:28 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Thu Oct 20 05:05:04 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Thu Oct 20 05:05:04 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+Thu Oct 20 05:05:06 2016 - [emperor] removed uwsgi instance jumpserver.ini
+Thu Oct 20 05:05:06 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+Thu Oct 20 05:05:07 2016 - The Emperor is buried.
+waiting for Emperor death...
+The Emperor has been buried (pid: 114881)
+...brutally killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/project
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/uwsgi
+[uWSGI] getting INI configuration from ./emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Thu Oct 20 05:05:08 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/project
+detected binary path: /usr/local/uwsgi/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x85fcc0
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 114880)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Thu Oct 20 05:05:08 2016 - [emperor] vassal jumpserver.ini has been spawned
+Thu Oct 20 05:05:08 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Thu Oct 20 05:05:08 2016 - [emperor] vassal flask.ini has been spawned
+Thu Oct 20 05:05:08 2016 - [emperor] vassal flask.ini is ready to accept requests
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Thu Oct 20 05:05:14 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Thu Oct 20 05:05:14 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Thu Oct 20 05:05:16 2016 - [emperor] removed uwsgi instance jumpserver.ini
+Thu Oct 20 05:05:16 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+Thu Oct 20 05:05:17 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 114936)
+...brutally killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/project
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/uwsgi
+[uWSGI] getting INI configuration from ./emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Thu Oct 20 05:05:18 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/project
+detected binary path: /usr/local/uwsgi/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x108dcc0
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 114880)
+Thu Oct 20 05:05:18 2016 - [emperor] vassal flask.ini has been spawned
+Thu Oct 20 05:05:18 2016 - [emperor] vassal jumpserver.ini has been spawned
+Thu Oct 20 05:05:18 2016 - [emperor] vassal flask.ini is ready to accept requests
+Thu Oct 20 05:05:18 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+*** Starting uWSGI 2.0.14 (64bit) on [Thu Oct 20 05:05:40 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/project
+writing pidfile to var/run/uwsgi.pid
+detected binary path: /usr/local/uwsgi/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1e88dd0
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+spawned uWSGI master process (pid: 114991)
+Thu Oct 20 05:05:40 2016 - [emperor] vassal flask.ini has been spawned
+Thu Oct 20 05:05:40 2016 - [emperor] vassal flask.ini is ready to accept requests
+Thu Oct 20 05:05:40 2016 - [emperor] vassal jumpserver.ini has been spawned
+Thu Oct 20 05:05:40 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Thu Oct 20 05:07:43 2016 - [emperor] vassal jumpserver.ini is now loyal
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 19:14:19 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+writing pidfile to ../var/run/uwsgi.pid
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** starting uWSGI Emperor ***
+*** has_emperor mode detected (fd: 6) ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1f67e30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+spawned uWSGI master process (pid: 34631)
+[uWSGI] getting INI configuration from jumpserver.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:14:19 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 19:14:19 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 19:14:19 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 19:14:19 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Sun Oct 23 19:16:01 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 19:16:02 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34634)
+Sun Oct 23 19:16:02 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:05 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34685)
+Sun Oct 23 19:16:05 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:08 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34686)
+Sun Oct 23 19:16:08 2016 - [emperor] removed uwsgi instance flask.ini
+Sun Oct 23 19:16:08 2016 - [emperor] unloyal bad behaving vassal found: flask.ini throttling it...
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:12 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34687)
+Sun Oct 23 19:16:12 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:15 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34688)
+Sun Oct 23 19:16:15 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:21 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34690)
+Sun Oct 23 19:16:21 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:27 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34700)
+Sun Oct 23 19:16:27 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:33 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34705)
+Sun Oct 23 19:16:33 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 19:16:35 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+waiting for Emperor death...
+Sun Oct 23 19:16:37 2016 - [emperor] removed uwsgi instance jumpserver.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 19:16:38 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 34632)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 19:16:39 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd02d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:39 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34711)
+Sun Oct 23 19:16:39 2016 - [emperor] removed uwsgi instance flask.ini
+Sun Oct 23 19:16:39 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 19:16:39 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:39 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34717)
+Sun Oct 23 19:16:39 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:42 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34719)
+Sun Oct 23 19:16:42 2016 - [emperor] removed uwsgi instance flask.ini
+Sun Oct 23 19:16:42 2016 - [emperor] unloyal bad behaving vassal found: flask.ini throttling it...
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:45 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34723)
+Sun Oct 23 19:16:45 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:48 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34729)
+Sun Oct 23 19:16:48 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:16:54 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34730)
+Sun Oct 23 19:16:54 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:17:00 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34731)
+Sun Oct 23 19:17:00 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:17:06 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34734)
+Sun Oct 23 19:17:06 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:17:15 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34744)
+Sun Oct 23 19:17:15 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:17:24 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34756)
+Sun Oct 23 19:17:24 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:17:33 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34759)
+Sun Oct 23 19:17:33 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:17:45 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34766)
+Sun Oct 23 19:17:45 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:17:57 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34768)
+Sun Oct 23 19:17:57 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:18:09 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34769)
+Sun Oct 23 19:18:09 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:18:24 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34780)
+Sun Oct 23 19:18:24 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:18:39 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34807)
+Sun Oct 23 19:18:39 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:18:54 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34818)
+Sun Oct 23 19:18:54 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:12 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34819)
+Sun Oct 23 19:19:12 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 19:19:24 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+waiting for Emperor death...
+Sun Oct 23 19:19:26 2016 - [emperor] removed uwsgi instance jumpserver.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 19:19:27 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 34709)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 19:19:28 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1715d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:28 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34841)
+Sun Oct 23 19:19:28 2016 - [emperor] removed uwsgi instance flask.ini
+Sun Oct 23 19:19:28 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 19:19:28 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:28 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34847)
+Sun Oct 23 19:19:28 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:31 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34850)
+Sun Oct 23 19:19:31 2016 - [emperor] removed uwsgi instance flask.ini
+Sun Oct 23 19:19:31 2016 - [emperor] unloyal bad behaving vassal found: flask.ini throttling it...
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:34 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34851)
+Sun Oct 23 19:19:34 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:37 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34852)
+Sun Oct 23 19:19:37 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:43 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34854)
+Sun Oct 23 19:19:43 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:49 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34865)
+Sun Oct 23 19:19:49 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:19:55 2016 - [emperor] curse the uwsgi instance flask.ini (pid: 34866)
+Sun Oct 23 19:19:55 2016 - [emperor] removed uwsgi instance flask.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:20:04 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 19:20:04 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 19:20:13 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 19:20:14 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 19:20:17 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 19:20:18 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 19:20:21 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 19:20:22 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 19:20:31 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 19:20:32 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 19:24:26 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 19:24:27 2016 - [emperor] vassal flask.ini is ready to accept requests
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 19:24:45 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Sun Oct 23 19:24:45 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 19:24:47 2016 - [emperor] removed uwsgi instance jumpserver.ini
+Sun Oct 23 19:24:47 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 19:24:48 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 34839)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 19:24:49 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x21cdd30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 19:24:49 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 19:24:49 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 19:24:49 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 19:24:49 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Sun Oct 23 19:58:31 2016 - [emperor] vassal flask.ini is now loyal
+Sun Oct 23 20:01:34 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:01:35 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:01:35 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:01:36 2016 - [emperor] vassal flask.ini is ready to accept requests
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:01:56 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Sun Oct 23 20:01:56 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:01:58 2016 - [emperor] removed uwsgi instance jumpserver.ini
+waiting for Emperor death...
+Sun Oct 23 20:01:58 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:01:59 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 34986)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:02:00 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x19e5d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 20:02:00 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 20:02:00 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:02:00 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 20:02:00 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Sun Oct 23 20:05:31 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:05:32 2016 - [emperor] vassal flask.ini is ready to accept requests
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:05:32 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Sun Oct 23 20:05:32 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 20:05:34 2016 - [emperor] removed uwsgi instance jumpserver.ini
+Sun Oct 23 20:05:34 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:05:35 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 35831)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:05:36 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+*** starting uWSGI Emperor ***
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd84d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+Sun Oct 23 20:05:36 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 20:05:36 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:05:36 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 20:05:36 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Sun Oct 23 20:06:03 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:06:04 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:06:04 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:06:06 2016 - [emperor] vassal flask.ini is ready to accept requests
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:06:07 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Sun Oct 23 20:06:07 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:06:09 2016 - [emperor] removed uwsgi instance jumpserver.ini
+Sun Oct 23 20:06:09 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 20:06:10 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 35994)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:06:11 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 7) ***
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from flask.ini
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe98d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+Sun Oct 23 20:06:11 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 20:06:11 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:06:11 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 20:06:11 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:06:19 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Sun Oct 23 20:06:19 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 20:06:21 2016 - [emperor] removed uwsgi instance jumpserver.ini
+Sun Oct 23 20:06:21 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:06:22 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 36019)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:06:23 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xdccd30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 20:06:23 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 20:06:23 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:06:23 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 20:06:23 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Sun Oct 23 20:07:25 2016 - [emperor] vassal flask.ini is now loyal
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:07:37 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Sun Oct 23 20:07:37 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:07:39 2016 - [emperor] removed uwsgi instance jumpserver.ini
+Sun Oct 23 20:07:39 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 20:07:40 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 36041)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/uwsgi/etc
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:07:41 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from jumpserver.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2681d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 34631)
+*** has_emperor mode detected (fd: 7) ***
+[uWSGI] getting INI configuration from flask.ini
+Sun Oct 23 20:07:41 2016 - [emperor] vassal jumpserver.ini has been spawned
+Sun Oct 23 20:07:41 2016 - [emperor] vassal jumpserver.ini is ready to accept requests
+Sun Oct 23 20:07:41 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 20:07:41 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:07:50 2016 - [emperor] vassal flask.ini is now loyal
+Sun Oct 23 20:12:42 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:12:43 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:13:25 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:13:26 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:13:41 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:13:42 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:13:48 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:13:49 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:14:00 2016 - [emperor] vassal flask.ini is now loyal
+Sun Oct 23 20:18:54 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:18:56 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:19:04 2016 - [emperor] vassal flask.ini is now loyal
+Sun Oct 23 20:20:10 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:20:12 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:20:18 2016 - [emperor] vassal flask.ini is now loyal
+Sun Oct 23 20:20:51 2016 - [emperor] stop the uwsgi instance jumpserver.ini
+Sun Oct 23 20:20:52 2016 - [emperor] removed uwsgi instance jumpserver.ini
+SIGINT/SIGQUIT received...killing workers...
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:21:14 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:21:16 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 20:21:17 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 36096)
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:35:13 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/nginx/conf
+writing pidfile to /usr/local/uwsgi/var/run/uwsgi.pid
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1657e30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+spawned uWSGI master process (pid: 36533)
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:37:42 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 36534)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/nginx/conf
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:37:43 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/nginx/conf
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1cc7d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 36533)
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:41:15 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 36598)
+...gracefully killing workers...
+binary reloading uWSGI...
+chdir() to /usr/local/nginx/conf
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+running /usr/local/uwsgi/bin/uwsgi
+[uWSGI] getting INI configuration from /usr/local/uwsgi/etc/emperor.ini
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:41:16 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/nginx/conf
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** starting uWSGI Emperor ***
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1608d30
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+gracefully (RE)spawned uWSGI master process (pid: 36533)
+SIGINT/SIGQUIT received...killing workers...
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:41:56 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 36690)
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.14 (64bit) on [Sun Oct 23 20:42:24 2016] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-4) on 19 October 2016 23:17:07
+os: Linux-3.10.0-327.28.3.el7.x86_64 #1 SMP Thu Aug 18 19:05:49 UTC 2016
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /usr/local/uwsgi/etc
+writing pidfile to /usr/local/uwsgi/var/run/uwsgi.pid
+detected binary path: /usr/local/uwsgi/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3794
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+*** starting uWSGI Emperor ***
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 2.7.5 (default, Sep 15 2016, 22:37:39)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-4)]
+*** has_emperor mode detected (fd: 6) ***
+[uWSGI] getting INI configuration from flask.ini
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1659e10
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: no-workers ***
+spawned uWSGI master process (pid: 36716)
+Sun Oct 23 20:42:25 2016 - [emperor] vassal flask.ini has been spawned
+Sun Oct 23 20:42:25 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:43:16 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:43:17 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:43:23 2016 - [emperor] vassal flask.ini is now loyal
+Sun Oct 23 20:43:38 2016 - [emperor] reload the uwsgi instance flask.ini
+Sun Oct 23 20:43:39 2016 - [emperor] vassal flask.ini is ready to accept requests
+Sun Oct 23 20:43:40 2016 - [emperor] vassal flask.ini is now loyal
+SIGINT/SIGQUIT received...killing workers...
+waiting for Emperor death...
+[emperor] *** RAGNAROK EVOKED ***
+Sun Oct 23 20:44:54 2016 - [emperor] stop the uwsgi instance flask.ini
+waiting for Emperor death...
+waiting for Emperor death...
+Sun Oct 23 20:44:56 2016 - [emperor] removed uwsgi instance flask.ini
+waiting for Emperor death...
+Sun Oct 23 20:44:57 2016 - The Emperor is buried.
+The Emperor has been buried (pid: 36717)
+goodbye to uWSGI.
