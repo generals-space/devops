@@ -65,7 +65,6 @@ function docker-map() {
 	if [[ -z $1 || -z $2 ]]; then
 		echo '抱歉, 您必须指定目标容器及待映射的容器端口'
 		echo 'syntax: docker-map {container_name | container_id} {container_port} [host_port]'
-    ## 在终端执行的话, exit会退出终端
 	##	exit 1
                 return 
 	fi
@@ -81,6 +80,9 @@ function docker-map() {
 	fi
 	
 	container_ip=$(docker-ip $1)
+    local result=$?
+    ## 容器名错误则退出
+	if (( $result != 0 )); then return $result; fi
 	container_port=$2
 	host_port=$3
 	## 三目运算, 第1个参数可以是0或非0数字, 或者空或者非空字符串, 作为判断条件
@@ -90,8 +92,8 @@ function docker-map() {
 	## nat表上的DOCKER链被合并入PREROUTING链. 
 	## 在tcp请求包流入主机时首先将其对宿主机端口host_port的请求重写为对指定容器的指定端口
 	iptables -t nat -A DOCKER -p tcp -m tcp --dport $host_port -j DNAT --to $container_ip:$container_port
-	## 将上面的请求包转发出去, 目标就是$container_ip:$container_port, 并添加MASQUERADE标记
-	iptables -t nat -A POSTROUTING -p tcp -m tcp --src $container_ip --dst $container_ip --dport $container_port -j MASQUERADE
+	## 将上面的请求包转发出去, 目标就是$container_ip:$container_port, 并添加MASQUERADE标记, 并且src必须指定为$host_ip, 只允许宿主机ip访问
+	iptables -t nat -A POSTROUTING -p tcp -m tcp --src $host_ip --dst $container_ip --dport $container_port -j MASQUERADE
 	## filter表上的DOCKER链被合并入INPUT链. 打开目标容器指定端口的INPUT链上的ACCEPT规则, 接受外部连接
 	iptables -t filter -A DOCKER -p tcp -m tcp --dst $container_ip --dport $container_port -j ACCEPT
 }
