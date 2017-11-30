@@ -1,0 +1,13 @@
+[Unit]                           
+Description=Docker Application Container Service                        
+[Service]
+## docker-containerd不能使用inotify方式, systemctl命令将无法自动退出
+Type=simple
+ExecStart=/usr/local/docker/bin/docker-containerd -l unix:///usr/local/docker/run/docker-containerd.sock --shim docker-containerd-shim --metrics-interval=0 --start-timeout 2m --state-dir /usr/local/docker/run/containerd --runtime docker-runc > /dev/null 2>&1 &
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+TimeoutStartSec=0
+Delegate=yes
+# kill时只杀docker进程, 子进程如containerd与runc进程不清除 
+KillMode=process
