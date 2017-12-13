@@ -1,0 +1,55 @@
+redis:
+  image: reg01.sky-mobi.com/huoshu/redis:latest
+  restart: always
+  volumes:
+   - /opt/apps/redis.conf.d:/etc/redis/conf.d
+   - /var/log/redis:/var/log/redis
+  ports:
+   - "6379:6379"
+
+hdc-manager:
+  image: reg01.sky-mobi.com/huoshu/hdc-manager:latest
+  restart: always
+  volumes:
+   - /opt/apps/hdc-manager.conf.d:/etc/hdc-manager/conf.d
+   - /var/log/hdc-manager:/var/log/hdc-manager
+  links:
+   - redis
+  ports:
+   - "8180:8080"
+
+skydata:
+  image: reg01.sky-mobi.com/huoshu/skydata:latest
+  restart: always
+  volumes:
+   - /opt/apps/skydata.conf.d:/etc/skydata/conf.d
+   - /var/log/skydata:/var/log/skydata
+  links:
+   - redis
+  ports:
+   - "8280:8080"
+
+etlloader:
+  image: reg01.sky-mobi.com/huoshu/etlloader:latest
+  restart: always
+  volumes:
+   - /opt/apps/etlloader.conf.d:/etc/etlloader/conf.d
+   - /var/log/etlloader:/var/log/etlloader
+  links:
+   - redis
+  ports:
+   - "8380:8080"
+
+nginx:
+  image: reg01.sky-mobi.com/huoshu/nginx:latest
+  restart: always
+  volumes:
+   - /opt/apps/nginx.conf.d:/etc/nginx/conf.d
+   - /var/log/nginx:/var/log/nginx
+  links:
+   - hdc-manager
+   - skydata
+   - etlloader
+  ports:
+   - "80:80"
+   - "81:81"

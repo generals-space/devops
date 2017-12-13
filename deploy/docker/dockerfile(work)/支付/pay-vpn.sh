@@ -3,7 +3,7 @@
 ## docker build -f pay-vpn.sh -t reg01.sky-mobi.com/vpn-reset-service/pptp:x.x.x .
 
 ## 源镜像已经对192和172在iptables中做了兼容
-FROM  reg01.sky-mobi.com/vpn-reset-service/pptp:latest
+FROM  reg01.sky-mobi.com/vpn-reset-service/pptp:base
 ################################################################
 ## docker镜像通用设置
 ## 创建者信息
@@ -28,8 +28,9 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     ## && echo 'net.ipv4.conf.eth0.send_redirects=0' >> /etc/sysctl \
     ## && sysctl -p
 
-COPY CentOS-Base-Skymobi_San_Dun.repo /etc/yum.repos.d/CentOS-Base-Skymobi_San_Dun.repo
-COPY CentOS-Epel-Skymobi_San_Dun.repo /etc/yum.repos.d/CentOS-Epel-Skymobi_San_Dun.repo
+## 构建镜像时无法解析阿里云域名, 用COPY代替
+COPY CentOS-Base-Aliyun.repo /etc/yum.repos.d/CentOS-Base-Aliyun.repo
+COPY CentOS-Epel-Aliyun.repo /etc/yum.repos.d/CentOS-Epel-Aliyun.repo
 
 ## runningEnv环境变量由启动容器时通过-e参数指定
 CMD echo 'nameserver 114.114.114.114' > /etc/resolv.conf \
