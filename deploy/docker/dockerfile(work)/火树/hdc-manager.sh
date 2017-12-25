@@ -6,11 +6,10 @@ FROM reg01.sky-mobi.com/huoshu/tomcat:latest
 ## docker镜像通用设置
 ## 创建者信息
 MAINTAINER general "generals.space@gmail.com"
+## 环境变量, 使docker容器支持中文
+ENV LANG en_US.UTF-8
 
-COPY hdc-manager.war /usr/local/apache-tomcat-8.5.4/webapps/se/
-RUN source /etc/profile \
-    && cd /usr/local/apache-tomcat-8.5.4/webapps/se \
-    && jar -xf hdc-manager.war && rm -f hdc-manager.war
+COPY se /usr/local/apache-tomcat-8.5.4/webapps/se
 
 CMD echo "$ORACLE_ADDR jdbc.oracle.addr" >> /etc/hosts \
     && source /etc/profile \

@@ -9,7 +9,8 @@ FROM reg01.sky-mobi.com/huoshu/base:1.0.0
 ## docker镜像通用设置
 ## 创建者信息
 MAINTAINER general "generals.space@gmail.com"
-
+## 环境变量, 使docker容器支持中文
+ENV LANG en_US.UTF-8
 ################################################################
 ## JDK8
 ## 注意环境变量写入时是单引号

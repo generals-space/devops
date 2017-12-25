@@ -56,6 +56,8 @@ SQL>
 
 由于`--restart=always`启动参数的存在, 容器异常崩溃时会自动重启. 其他容器都设置了启动时自动运行其中的服务的规则, 但是`oracle`容器没有这个配置, 所以oracle容器挂掉后依然需要手动进入容器再执行一遍上述操作.
 
+数据存储目录需要单独打包. 启动时也应把这个目录挂载出来, 以防容器崩溃时数据丢失.
+
 ## 2. nginx容器操作
 
 ### 2.1 启动容器
@@ -63,8 +65,8 @@ SQL>
 ```
 docker run -d --restart=always \
 --net huoshu --ip=172.21.0.2 -p 80:80 -p 81:81 \
--v /opt/apps:/opt/apps \
--v /opt/apps/nginx.conf.d:/etc/nginx/conf.d \
+-v /opt/apps/front:/opt/apps \
+-v /opt/apps/front/nginx.conf.d:/etc/nginx/conf.d \
 -v /var/log/nginx:/var/log/nginx \
 reg01.sky-mobi.com/huoshu/nginx:1.0.0
 ```
@@ -73,7 +75,7 @@ reg01.sky-mobi.com/huoshu/nginx:1.0.0
 
 **关于升级**
 
-上述启动命令中挂载的`/opt/apps`的目标结构如下.
+上述启动命令中挂载的`/opt/apps/front`的目标结构如下.
 
 ```
 $ tree -L 2
@@ -83,14 +85,13 @@ $ tree -L 2
 └── nginx.conf.d
     ├── bi.conf
     └── hdc.conf
-
 ```
 
 其中`nginx.conf.d`挂载到nginx容器的`/etc/nginx/conf.d`目录, 所以可以直接在宿主机上编辑这个文件再重启容器中的nginx.
 
-另外, 由于`/opt/apps`目录整个挂载到容器中, 在nginx容器运行期间, 这个目录不可删除. 升级前端工程时需要将新的工程包放到这个`/opt/apps`目录下, 替换掉原来的工程目录, 然后重启nginx.
+另外, 由于`/opt/apps/front`目录整个挂载到容器中, 在nginx容器运行期间, 这个目录不可删除. 升级前端工程时需要将新的工程包放到这个`/opt/apps/front`目录下, 替换掉原来的工程目录, 然后重启nginx.
 
-> 不可删除的原因, nginx容器持有`/opt/apps`目录的句柄, 删除这个目录只是删除了它的索引, 实际存储块还在. 新建的目录不会重新挂载到容器.
+> 不可删除的原因, nginx容器持有`/opt/apps/front`目录的句柄, 删除这个目录只是删除了它的索引, 实际存储块还在. 新建的目录不会重新挂载到容器.
 
 ### 2.2 nginx重启命令
 
@@ -113,7 +114,7 @@ $ docker exec c98790552123 nginx -s reload
 $ docker run -d --restart=always \
 --net huoshu --ip=172.21.0.3 -p 6379:6379 \
 -v /var/log/redis:/var/log/redis \
-reg01.sky-mobi.com/huoshu/redis:latest
+reg01.sky-mobi.com/huoshu/redis:1.0.0
 ```
 
 ## 4. 工程容器
@@ -127,7 +128,7 @@ reg01.sky-mobi.com/huoshu/redis:latest
 `etlloader`
 
 ```
-$ docker run -d --restart=always \
+$ docker run -d --restart=always --name etlloader \
 --net huoshu --ip 172.21.1.4 -p 8380:8080 \
 -e ORACLE_ADDR=172.16.4.101 \
 -v /var/log/etlloader:/opt/etlloader/consolelog \
@@ -137,7 +138,7 @@ reg01.sky-mobi.com/huoshu/etlloader:1.0.0
 `skydata-se`
 
 ```
-$ docker run -d --restart=always \
+$ docker run -d --restart=always --name skydata-se \
 --net huoshu --ip=172.21.1.3 -p 8280:8080 \
 -v /var/log/skydata-se:/usr/local/apache-tomcat-8.5.4/logs \
 -e ORACLE_ADDR=172.16.4.101 \
@@ -147,7 +148,7 @@ reg01.sky-mobi.com/huoshu/skydata-se:1.0.0
 `hdc-manager`
 
 ```
-$ docker run -d --restart=always \
+$ docker run -d --restart=always --name hdc-manager \
 --net huoshu --ip=172.21.1.2 -p 8180:8080 \
 -v /var/log/hdc-manager:/usr/local/apache-tomcat-8.5.4/logs \
 -e ORACLE_ADDR=172.16.4.101 \

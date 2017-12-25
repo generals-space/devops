@@ -8,7 +8,8 @@ FROM reg01.sky-mobi.com/huoshu/base:1.0.0
 ## docker镜像通用设置
 ## 创建者信息
 MAINTAINER general "generals.space@gmail.com"
-
+## 环境变量, 使docker容器支持中文
+ENV LANG en_US.UTF-8
 ################################################################
 ## 注意环境变量写入时是单引号
 RUN curl http://172.16.4.101/redis-2.8.3.tar.gz -o /usr/local/redis-2.8.3.tar.gz \

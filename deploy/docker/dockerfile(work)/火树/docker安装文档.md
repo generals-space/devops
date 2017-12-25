@@ -33,7 +33,7 @@ touch /etc/docker/daemon.json
     "graph": "/opt/docker",
     "registry-mirrors": [
         "https://registry.docker-cn.com", 
-        "https://docker.mirrors.ustc.edu.cn",
+        "https://docker.mirrors.ustc.edu.cn"
     ]
 }
 ```
@@ -50,7 +50,9 @@ systemctl start docker
 
 ------
 
-拷贝快捷命令. 将`bash_docker.sh`文件中的内容追加到`/root/.bashrc`文件尾部, 然后`source /root/.bashrc`使之生效. 
+## 1.1 拷贝快捷命令
+
+将`bash_docker.sh`文件中的内容追加到`/root/.bashrc`文件尾部, 然后`source /root/.bashrc`使之生效. 
 
 该文件中包含了1个常用命令`docker-enter`. 
 
@@ -63,6 +65,24 @@ c98790552123        reg01.sky-mobi.com/huoshu/nginx:1.0.0          "/bin/sh -c '
 $ docker-enter c98790552123
 [root@c98790552123 ~]# 
 ```
+
+### 1.2 自定义网络
+
+默认每台宿主机上启动的docker容器都在一个小型局域网内, 类似于虚拟机, 所有的流量通过宿主机做`nat`转发, 这也是一般路由器的工作方式.
+
+但是这种方式类似于`dhcp`, 每次启动容器所获取的IP并不确定. 为了保证各工程容器地址固定, 我们需要创建自定义的docker局域网, 并在启动容器的时候指定该容器的IP. 
+
+注意: 这个操作的目的是保持**工程容器**的地址固定, 比如, 写在工程配置文件中的redis与oracle地址, nginx配置文件中后端工程监听的IP与端口地址等, 不方便频繁变动的情况.
+
+不过目前oracle在一台单独的服务器上, 所以并不需要创建的这个网络. 只在redis与工程容器所在的服务器上执行如下操作即可. 如下
+
+```
+$ docker network create --subnet=172.21.0.0/16 huoshu
+```
+
+在当前宿主机上创建一个小型局域网`subnet`, 不与外界连通. `huoshu`即为该网段名称, 启动一个docker容器时可以显示指定`--net huoshu`从而自动获取一个该网段内的IP.
+
+约定`redis`运行在`172.21.0.3`这个地址, 工程配置文件不再需要再作修改.
 
 ## 2. docker的基本操作
 
@@ -102,25 +122,7 @@ reg01.sky-mobi.com/huoshu/nginx           1.0.0               99e4c2104361      
 
 可以看到**`load`之后会保持镜像名不变, 所以工程升级时, 打的镜像版本号也要不同, 不然会发生冲突**.
 
-### 2.2 自定义网络
-
-默认每台宿主机上启动的docker容器都在一个小型局域网内, 类似于虚拟机, 所有的流量通过宿主机做`nat`转发, 这也是一般路由器的工作方式.
-
-但是这种方式类似于`dhcp`, 每次启动容器所获取的IP并不确定. 为了保证各工程容器地址固定, 我们需要创建自定义的docker局域网, 并在启动容器的时候指定该容器的IP. 
-
-注意: 这个操作的目的是保持**工程容器**的地址固定, 比如, 写在工程配置文件中的redis与oracle地址, nginx配置文件中后端工程监听的IP与端口地址等, 不方便频繁变动的情况.
-
-不过目前oracle在一台单独的服务器上, 所以并不需要创建的这个网络. 只在redis与工程容器所在的服务器上执行如下操作即可. 如下
-
-```
-$ docker network create --subnet=172.21.0.0/16 huoshu
-```
-
-在当前宿主机上创建一个小型局域网`subnet`, 不与外界连通. `huoshu`即为该网段名称, 启动一个docker容器时可以显示指定`--net huoshu`从而自动获取一个该网段内的IP.
-
-约定`redis`运行在`172.21.0.3`这个地址, 工程配置文件不再需要再作修改.
-
-### 2.3 oracle地址的指定
+### 2.2 oracle地址的指定
 
 约定在工程中oracle的地址统一写作`jdbc.oracle.addr`这个域名, 然后在有用到oracle的容器启动时, 在命令行中指定`ORACLE_ADDR`这个环境变量为实际oracle所在服务器地址(通过docker的`-e`选项可以实现). 
 

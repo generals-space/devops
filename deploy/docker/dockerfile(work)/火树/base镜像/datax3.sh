@@ -7,7 +7,8 @@ FROM reg01.sky-mobi.com/huoshu/jdk:8.0.0
 ## 创建者信息
 MAINTAINER general "generals.space@gmail.com"
 ## 环境变量, 使docker容器支持中文
-ENV LANG zh_CN.UTF-8
+ENV LANG en_US.UTF-8
+
 ################################################################
 RUN mkdir /opt/datax3 \
     && curl http://172.16.4.101/datax.tar.gz -o /opt/datax3/datax.tar.gz \

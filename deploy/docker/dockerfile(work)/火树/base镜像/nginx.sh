@@ -7,7 +7,7 @@ FROM reg01.sky-mobi.com/huoshu/base:1.0.0
 ## 创建者信息
 MAINTAINER general "generals.space@gmail.com"
 ## 环境变量, 使docker容器支持中文
-ENV LANG zh_CN.UTF-8
+ENV LANG en_US.UTF-8
 ################################################################
 RUN yum install nginx -y \
     && yum clean all
@@ -17,7 +17,7 @@ CMD service nginx start && tail -f /etc/yum.conf
 ## 启动命令, 挂载配置文件目录及日志目录, 映射端口
 ## docker run -d --restart=always \
 ## --net huoshu --ip=172.21.0.2 -p 80:80 -p 81:81 \
-## -v /opt/apps:/opt/apps \
+## -v /opt/apps/front:/opt/apps \
 ## -v /opt/apps/nginx.conf.d:/etc/nginx/conf.d \
 ## -v /var/log/nginx:/var/log/nginx \
 ## reg01.sky-mobi.com/huoshu/nginx:1.0.0
