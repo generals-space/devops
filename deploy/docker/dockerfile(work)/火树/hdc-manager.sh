@@ -12,6 +12,7 @@ ENV LANG en_US.UTF-8
 COPY se /usr/local/apache-tomcat-8.5.4/webapps/se
 
 CMD echo "$ORACLE_ADDR jdbc.oracle.addr" >> /etc/hosts \
+    && sed -i "s/jdbc.cas.addr/${CAS_ADDR}/g" /xxx/test.conf \
     && source /etc/profile \
     && /usr/local/apache-tomcat-8.5.4/bin/startup.sh \
     && tail -f /etc/yum.conf

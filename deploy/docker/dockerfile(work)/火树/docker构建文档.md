@@ -17,11 +17,10 @@ FROM reg01.sky-mobi.com/huoshu/tomcat:latest
 ## docker镜像通用设置
 ## 创建者信息
 MAINTAINER general "generals.space@gmail.com"
+## 环境变量, 使docker容器支持中文
+ENV LANG en_US.UTF-8
 
-COPY hdc-manager.war /usr/local/apache-tomcat-8.5.4/webapps/se/
-RUN source /etc/profile \
-    && cd /usr/local/apache-tomcat-8.5.4/webapps/se \
-    && jar -xf hdc-manager.war && rm -f hdc-manager.war
+COPY se /usr/local/apache-tomcat-8.5.4/webapps/se
 
 CMD echo "$ORACLE_ADDR jdbc.oracle.addr" >> /etc/hosts \
     && source /etc/profile \
@@ -32,6 +31,8 @@ CMD echo "$ORACLE_ADDR jdbc.oracle.addr" >> /etc/hosts \
 `FROM`: 表示所依赖的基础镜像, `hdc-manager`依赖`tomcat`镜像.
 
 `MAINTAINER`: 创建者信息, 可以不用管.
+
+`ENV`: 设置环境变量, 与bash命令行中`export`的功能类似.
 
 `COPY`: 会拷贝与构建文件相同路径下的文件到容器内部, 不存在的路径将会自动创建. 上面是将`war`包拷贝到`webapps`的`se`目录下. **注意`se`后的斜线**, 如果没有这个斜线, war包将会被拷贝成名为`se`的文件.
 

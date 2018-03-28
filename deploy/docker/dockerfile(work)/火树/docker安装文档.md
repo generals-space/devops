@@ -30,7 +30,7 @@ touch /etc/docker/daemon.json
 
 ```json
 {
-    "graph": "/opt/docker",
+    "data-root": "/opt/docker",
     "registry-mirrors": [
         "https://registry.docker-cn.com", 
         "https://docker.mirrors.ustc.edu.cn"
@@ -38,7 +38,9 @@ touch /etc/docker/daemon.json
 }
 ```
 
-其中`graph`字段为docker所有的镜像, 容器存放的位置, `/opt/docker`目录不必预先存在, 启动docker服务时会自动创建.
+> docker-ce将`graph`字段修改为`data-root`
+
+其中`data-root`字段为docker所有的镜像, 容器存放的位置, `/opt/docker`目录不必预先存在, 启动docker服务时会自动创建.
 
 `registry-mirrors`字段为国内镜像源加速列表(在`火树`的使用场景中, 由于没有网络连接, 其实没什么用).
 
@@ -83,6 +85,12 @@ $ docker network create --subnet=172.21.0.0/16 huoshu
 在当前宿主机上创建一个小型局域网`subnet`, 不与外界连通. `huoshu`即为该网段名称, 启动一个docker容器时可以显示指定`--net huoshu`从而自动获取一个该网段内的IP.
 
 约定`redis`运行在`172.21.0.3`这个地址, 工程配置文件不再需要再作修改.
+
+自定义网络环境下, 容器与其宿主机本身的端口无法连通(但默认网络可以), 我们还需要添加一句如下代码, 使得容器内可以直接连接宿主机的端口, 无论通过`172.21.0.1`还是宿主机的物理IP, 都行.
+
+```
+$ iptables -I INPUT_direct -s 172.21.0.0/16 -j ACCEPT
+```
 
 ## 2. docker的基本操作
 

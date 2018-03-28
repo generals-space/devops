@@ -21,4 +21,3 @@ RUN curl http://192.168.166.220/software/jdk/jdk-8u101-linux-x64.tar.gz -o /usr/
     && echo 'export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH' >> /etc/profile \
     && echo 'source /etc/profile' >> /root/.bashrc \
     && rm -f /usr/local/jdk-8u101-linux-x64.tar.gz
-

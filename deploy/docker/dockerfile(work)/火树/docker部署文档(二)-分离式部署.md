@@ -44,7 +44,7 @@ docker run -d --restart=always \
 reg01.sky-mobi.com/huoshu/tomcat:latest
 ```
 
-`skydata-se`    
+`skydata-se`
 
 war包解压后放在`/opt/apps`目录下, 即工程全路径为`/opt/apps/skydata-se`
 
@@ -80,4 +80,21 @@ etlloader
     ├── exe.sh
     ├── run.jar
     └── run.sh
+```
+
+## 脚本部署
+
+```
+docker run -d -v /opt/apps/hdc-manager:/usr/local/apache-tomcat/webapps/se tomcat:lates
+
+
+
+## 删除
+docker rm etlloader
+## 移除旧工程包
+rm -rf /opt/apps/etlloader
+## 拷贝新工程包
+cp -r ./etlloader /opt/apps
+## 启动新工程
+docker run -d xxxxxx reg01.xxx.com/etlloader-datax:latest
 ```

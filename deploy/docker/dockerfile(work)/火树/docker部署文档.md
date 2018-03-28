@@ -21,7 +21,7 @@ $ docker run -d --privileged  --restart=always \
 --shm-size 2147483648 \
 -p 1521:1521 \
 -v /opt/oracle:/opt/oracle \
-reg01.sky-mobi.com/huoshu/oracle-final:1.0.0 tail -f /etc/yum.conf
+reg01.sky-mobi.com/huoshu/oracle-final:1.0.3
 ```
 
 使用`docker-enter`进入容器, 执行初始化脚本, 并启动数据实例
@@ -50,7 +50,7 @@ SQL>
 
 退出容器, 回到宿主机命令行.
 
-`oracle`容器不需要指定IP, 因为它在独立的服务器上. 只需要映射容器的1521端口到宿主机本身的1521端口上即可.
+如果`oracle`容器在独立的服务器上, 则不需要指定IP, 只需要映射容器的1521端口到宿主机本身的1521端口上即可.
 
 **注意:**
 
@@ -153,4 +153,14 @@ $ docker run -d --restart=always --name hdc-manager \
 -v /var/log/hdc-manager:/usr/local/apache-tomcat-8.5.4/logs \
 -e ORACLE_ADDR=172.16.4.101 \
 reg01.sky-mobi.com/huoshu/hdc-manager:1.0.0
+```
+
+`drgs`
+
+```
+$ docker run -d --restart=always \
+--net huoshu --ip 172.21.1.5 -p 9998:9998 \
+-e ORACLE_ADDR=172.16.4.101 \
+-v /var/log/drgs:/opt/drgs/log \
+reg01.sky-mobi.com/huoshu/drgs:1.0.0
 ```

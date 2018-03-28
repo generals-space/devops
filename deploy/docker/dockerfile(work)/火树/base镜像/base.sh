@@ -8,7 +8,7 @@ FROM centos:6
 MAINTAINER general "generals.space@gmail.com"
 ## 环境变量, 使docker容器支持中文
 ENV LANG en_US.UTF-8
-
+RUN echo 'export LANG=en_US.UTF-8' >> /root/.bashrc
 ################################################################
 ## 官方镜像完善
 RUN rm -f /etc/yum.repos.d/* 

@@ -44,11 +44,7 @@ CMD echo 'nameserver 114.114.114.114' > /etc/resolv.conf \
 ## docker run -d --privileged=true --net=macnet --restart=always \
 ## --ip=192.168.171.3 --name=192.168.171.3 --hostname=192-168-171-3 \
 ## -v /root/docker_share_dir:/root/docker_share_dir \
-## reg01.sky-mobi.com/vpn-reset-service/pptp:latest 
-
-
-
-
+## reg01.sky-mobi.com/vpn-reset-service/pptp:latest
 
 ######################################################################
 ## 拷贝文件部分

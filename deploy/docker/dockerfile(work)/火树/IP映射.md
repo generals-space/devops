@@ -2,6 +2,7 @@
 
 nginx: 172.21.0.2
 redis: 172.21.0.3
+oracle: 172.21.0.4
 oracle: jdbc.oracle.addr
 
 ## 工程容器
@@ -11,3 +12,4 @@ oracle: jdbc.oracle.addr
 hdc-manager: 172.21.1.2:8180
 skydata-se: 172.21.1.3:8280
 etlloader: 172.21.1.4:8380
+drgs: 172.21.1.5:9998

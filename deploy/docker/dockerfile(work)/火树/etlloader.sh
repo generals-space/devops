@@ -24,7 +24,7 @@ CMD echo "$ORACLE_ADDR jdbc.oracle.addr" >> /etc/hosts \
 
 ## 启动命令
 ## docker run -d --restart=always \
-## --net huoshu --ip 172.21.1.4 -p 8380:8380 \
+## --net huoshu --ip 172.21.1.4 -p 8380:8080 \
 ## -e ORACLE_ADDR=172.16.4.101 \
 ## -v /var/log/etlloader:/opt/etlloader/consolelog \
-## reg01.sky-mobi.com/huoshu/etlloader:1.0.0
+## reg01.sky-mobi.com/huoshu/etlloader:1.0.0 
