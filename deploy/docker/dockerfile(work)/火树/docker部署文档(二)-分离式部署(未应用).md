@@ -1,4 +1,4 @@
-# docker部署文档(二)
+# docker部署文档(二)-未应用
 
 > 文档内容请拷贝到[作业部落](https://www.zybuluo.com/mdeditor)以获得更好的排版格式和阅读效果.
 
@@ -80,21 +80,4 @@ etlloader
     ├── exe.sh
     ├── run.jar
     └── run.sh
-```
-
-## 脚本部署
-
-```
-docker run -d -v /opt/apps/hdc-manager:/usr/local/apache-tomcat/webapps/se tomcat:lates
-
-
-
-## 删除
-docker rm etlloader
-## 移除旧工程包
-rm -rf /opt/apps/etlloader
-## 拷贝新工程包
-cp -r ./etlloader /opt/apps
-## 启动新工程
-docker run -d xxxxxx reg01.xxx.com/etlloader-datax:latest
 ```

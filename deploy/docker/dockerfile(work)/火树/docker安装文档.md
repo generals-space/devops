@@ -12,7 +12,7 @@
 curl -o /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 
-然后
+然后安装并设置开机启动
 
 ```bash
 yum install docker-ce
