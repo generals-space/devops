@@ -9,7 +9,7 @@ FROM  reg01.sky-mobi.com/base/jdk:6.0.0
 ## 创建者信息
 MAINTAINER general "jiale.huang@sky-mobi.com"
 ## 环境变量, 使docker容器支持中文
-ENV LANG zh_CN.UTF-8
+ENV LANG en_US.UTF-8
 ################################################################
 ## JDK6
 ## 注意环境变量写入时是单引号

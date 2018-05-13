@@ -9,7 +9,7 @@ FROM docker.generals.space:5000/centos6:1.0.0
 ## 创建者信息
 MAINTAINER general "generals.space@gmail.com"
 ## 环境变量, 使docker容器支持中文
-ENV LANG zh_CN.UTF-8
+ENV LANG en_US.UTF-8
 ################################################################
 ## JDK6
 RUN curl http://192.168.166.220/software/tomcat/apache-tomcat-8.5.4.tar.gz -o /usr/local/apache-tomcat-8.5.4.tar.gz \

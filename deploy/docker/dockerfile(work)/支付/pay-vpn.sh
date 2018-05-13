@@ -10,7 +10,7 @@ FROM  reg01.sky-mobi.com/vpn-reset-service/pptp:base
 MAINTAINER general "jiale.huang@sky-mobi.com"
 
 ## 环境变量, 使docker容器支持中文
-ENV LANG zh_CN.UTF-8
+ENV LANG en_US.UTF-8
 ################################################################
 ## 拷贝初始化脚本
 COPY initEnv.sh /usr/bin/initEnv
