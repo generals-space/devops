@@ -1,0 +1,13 @@
+- name: 删除原版本jar包
+  ## -f 选项是为了防止新增jar包时, 这一句会找不到old_ver的jar包文件.
+  file: path=~/{{item_name}}/lib/{{jar_pkg}}-{{jar_old_ver}}.jar state=absent
+  become: yes
+  become_user: "{{item_user}}"
+- name: 拷贝新版本jar包到远程服务器的tmp_path目录下
+  ## 如果jar包文件放在common/files目录下, 则需要加上common_files_path...虽然好像写非变量形式的路径也差不多长
+  ## copy: src={{common_files_path}}/{{jar_pkg}}-{{jar_new_ver}}.jar dest={{tmp_path}} owner={{item_user}} group={{item_user}}
+  copy: src={{jar_pkg}}-{{jar_new_ver}}.jar dest={{tmp_path}} owner={{item_user}} group={{item_user}}
+- name: 移动新版本包到项目目录
+  shell: mv {{tmp_path}}/{{jar_pkg}}-{{jar_new_ver}}.jar ~/{{item_name}}/lib
+  become: yes
+  become_user: "{{item_user}}"

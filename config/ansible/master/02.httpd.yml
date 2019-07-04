@@ -1,0 +1,21 @@
+- hosts: docker
+## 这里是变量
+  vars:
+    http_port: 80
+    max_clients: 200
+## 远端的执行权限
+  remote_user: root
+  tasks:
+  ## 利用yum模块操作
+    - name: 保证安装的apache是最新版
+      yum: pkg=httpd state=latest
+    - name: 拷贝apache配置文件模板, 源文件需要存在!!
+      template: src=/tmp/http.conf.tpl dest=/tmp/httpd.conf
+      notify:
+      ## 注意: 这里notify列出的是handlers的name值
+      - restart apache
+    - name: 确认apache处于运行状态
+      service: name=httpd state=started
+  handlers:
+    - name: restart apache
+      service: name=httpd state=restarted

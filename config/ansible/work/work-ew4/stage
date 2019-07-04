@@ -1,0 +1,92 @@
+## [QA1-redis-ldrb]
+## 172.16.26.100
+## [QA1-redis-cache]
+## 172.16.26.101
+## [QA1-edge]
+## 172.16.26.105
+## 172.16.26.104
+## [QA1-chat]
+## [QA1-login]
+## 172.16.26.106
+## [QA1-logic]
+## 172.16.26.107
+## [QA1-config]
+## 172.16.26.103
+## 
+## [Dev-redis-ldrb]
+## 172.16.3.204
+## [Dev-redis-cache]
+## 172.16.3.204
+## [Dev-edge]
+## 172.16.3.204
+## 172.16.3.204
+## [Dev-chat]
+## [Dev-login]
+## 172.16.3.204
+## [Dev-logic]
+## 172.16.3.204
+## [Dev-config]
+## 172.16.3.206
+## 
+## [QA2-redis-ldrb]
+## 172.16.3.231
+## [QA2-redis-cache]
+## 172.16.3.231
+## [QA2-edge]
+## 172.16.3.231
+## 172.16.3.231
+## [QA2-chat]
+## [QA2-login]
+## 172.16.3.231
+## [QA2-logic]
+## 172.16.3.231
+## [QA2-config]
+## 172.16.3.232
+## 
+## [StageCN-redis-ldrb]
+## 172.16.3.233
+## [StageCN-redis-cache]
+## 172.16.3.233
+## [StageCN-edge]
+## 172.16.3.233
+## 172.16.3.233
+## [StageCN-chat]
+## [StageCN-login]
+## 172.16.3.233
+## [StageCN-logic]
+## 172.16.3.233
+## [StageCN-config]
+## 172.16.3.234
+## 
+## [edge:children]
+## QA1-edge
+## Dev-edge
+## QA2-edge
+## StageCN-edge
+## 
+## [chat:children]
+## QA1-chat
+## Dev-chat
+## QA2-chat
+## StageCN-chat
+## 
+## [login]
+## QA1-login
+## Dev-login
+## QA2-login
+## StageCN-login
+## 
+## [logic]
+## QA1-logic
+## Dev-logic
+## QA2-logic
+## StageCN-logic
+## 
+## [edge]
+## QA1-edge
+## Dev-edge
+## QA2-edge
+## StageCN-edge
+## 
+[docker]
+172.17.0.2

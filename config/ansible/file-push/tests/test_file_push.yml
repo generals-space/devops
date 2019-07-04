@@ -1,0 +1,40 @@
+-   hosts: target_hosts
+    remote_user: root
+    vars:
+        file_list:
+            ## file which need to be unpacked, the key need to be the directory name. So you need unpack it first and see what it exactly be.
+            apache-tomcat-8.5.8:
+                name: apache-tomcat-8.5.8.tar.gz
+                type: url
+                src_path: http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.5.8/bin/apache-tomcat-8.5.8.tar.gz
+                dst_path: /usr/local/tomcat
+                need_unpack: 'yes'
+                need_clear: 'yes'
+                with_owner: tomcat
+            yum.conf:
+                name: yum.conf
+                type: file
+                src_path: /etc/yum.conf
+                dst_path: /etc/yum.conf
+                need_unpack: 'no'
+                need_clear: 'no'
+                with_permission: 700
+                with_notify: 'completed'
+            pip.conf:
+                name: pip.conf
+                type: tpl
+                src_path: /etc/ansible/roles/generals-space.file-push/templates/pip.conf
+                dst_path: /etc/pip.conf
+        pip:
+            trusted-host: pypi.douban.com
+            index-url: http://pypi.douban.com/simple/
+    roles:
+        - {role: generals-space.file-push, "{{file_list}}"}
+    handlers:
+        - name: completed
+          service: name=httpd state=started
+
+## excute the commands as following.
+## the "hosts" value is in the dir of this role, change it as your own.
+## $ ansible-galaxy install generals-space.file-push
+## $ ansible-playbook -i ./stage test_file_push.yml

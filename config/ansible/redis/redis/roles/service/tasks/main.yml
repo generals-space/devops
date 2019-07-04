@@ -1,0 +1,7 @@
+- name: 拷贝service配置的模板文件
+  template: src=service-tpl.conf dest={{redis_path}}/conf/service/{{service_name}}.conf
+- name: 启动服务
+  ## 以自定义变量开头的值需要使用双引号括起来
+  command: "{{redis_path}}/bin/redis-server {{redis_path}}/conf/service/{{service_name}}.conf"
+  ## 注意: 使用when条件判断时, 未用引号引用的字符串默认都视为变量, 所以不需要用{{}}括起来
+  when: auto_start == 'yes'

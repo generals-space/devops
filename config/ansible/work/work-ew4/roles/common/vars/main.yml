@@ -1,0 +1,21 @@
+## 安装包资源路径
+RES_IP: 172.16.3.102
+RES_PREFIX: /ops/deployment_res/ew4/service
+RES_PATH: 
+  edge: "{{RES_PREFIX}}/edge"
+  chat: "{{RES_PREFIX}}/chat"
+  login: "{{RES_PREFIX}}/login"
+  logic: "{{RES_PREFIX}}/logic"
+
+## pip包的默认后缀
+suffix: .zip
+
+## 下载安装包的暂存路径
+tmpPath: /tmp
+
+## 目标工程路径
+PRO_PATH:
+  edge: /opt/ew4-edge-server
+  chat: /opt/ew4-chat-server
+  login: /opt/ew4-login-server
+  logic: /opt/ew4-logic-server

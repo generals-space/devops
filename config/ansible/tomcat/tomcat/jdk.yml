@@ -1,0 +1,13 @@
+- hosts: jdk
+  remote_user: root
+  vars:
+    file: 
+      pkg: jdk-8u101-linux-x64.tar.gz
+      unpkg: jdk1.8.0_101
+      path: /usr/local/jdk1.8
+      is_remote: 'no'
+    jdk:
+      path: "{{file['path']}}"
+  roles:
+    - {role: common, "{{file}}"}
+    - {role: jdk, "{{jdk}}"}

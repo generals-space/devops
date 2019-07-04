@@ -1,0 +1,15 @@
+## 安装基础编译依赖包, redis本身依赖较少
+## ansible自带的yum模块每次只能安装一个包...
+- name: 安装gcc
+  yum: name=gcc state=latest
+- name: 安装gcc-c++
+  yum: name=gcc-c++ state=latest
+- name: 安装make
+  yum: name=make state=latest
+## 以前没发现, 原来redis还依赖jemalloc
+- name: 安装jemalloc
+  yum: name=jemalloc state=latest
+  ignore_errors: True
+- name: 安装jemalloc-devel
+  yum: name=jemalloc-devel state=latest
+  ignore_errors: True

@@ -1,0 +1,6 @@
+- hosts: redis
+  remote_user: root
+  roles:
+    - common
+    ## 向角色对象中传递变量的方法
+    - {role: init}

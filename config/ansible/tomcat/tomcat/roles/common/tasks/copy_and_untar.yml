@@ -1,0 +1,22 @@
+## function: 拷贝文件到远程主机目标目录并解压
+## param: file{pkg: 压缩包文件路径, unpkg: 解压后的名称, path: 目标路径,is_remote: 是否为远程文件}
+## 注意: file['path']不能带有目标目录本身的路径, 只能是其父目录路径
+
+- name: 拷贝文件
+  copy: src={{file['pkg']}} dest=/tmp/
+  when: file['is_remote'] == 'no'
+- name: 拷贝文件服务器上的安装包到目标服务器
+  ## file['pkg']可以是一个url
+  get_url: url={{file['pkg']}} dest=/tmp/
+  when: file['is_remote'] == 'yes'
+
+####### 解压
+- name: 解压
+## ansible推荐使用内置模块, 虽然并没有感觉到什么特殊便利
+  ## unarchive需要加上copy=no这一句
+  unarchive: src=/tmp/{{file['pkg']}} dest=/tmp copy=no
+- name: 重命名解压目录
+  command: mv /tmp/{{file['unpkg']}} {{file['path']}}
+
+- name: 清理
+  file: path=/tmp/{{file['pkg']}} state=absent

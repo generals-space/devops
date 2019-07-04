@@ -1,0 +1,12 @@
+- hosts: docker
+  vars:
+  ##- user_name: 'general'
+  remote_user: root
+  tasks:
+    - name: copy the template to remote
+      template: src=/tmp/test.conf dest=/tmp/tester.conf
+      notify:
+      - start httpd
+  handlers:
+    - name: start httpd
+      service: name=httpd state=started

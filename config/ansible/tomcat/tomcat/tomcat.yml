@@ -1,0 +1,12 @@
+- hosts: tomcat
+  remote_user: root
+  vars:
+    file: 
+      pkg: apache-tomcat-8.5.4.tar.gz
+      unpkg: apache-tomcat-8.5.4
+      path: /usr/local/apache-tomcat-8.5.4
+      is_remote: 'no'
+  roles:
+    - {role: common, "{{file}}"}
+    - {role: tomcat}
+

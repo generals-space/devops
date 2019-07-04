@@ -1,0 +1,21 @@
+-   hosts: redis
+    remote_user: root
+    vars:
+        service_name: skydata
+        service_port: 6379
+        service_append: ""
+        file_list:
+            service.conf:
+                name: service.conf
+                type: tpl
+                src_path: roles/redis/templates/service.conf
+                dst_path: "{{ redis_path }}/conf/service/{{service_name}}-{{service_port}}.conf"
+                with_owner: redis
+                with_notify: start {{service_name}}
+    roles:
+        ## 向角色对象中传递变量的方法
+        - {role: generals-space.file-push, "{{file_list}}"}
+        - {role: redis, tags: ["service"]}
+    handlers:
+        - name: start {{service_name}}
+          shell: "{{redis_path}}/bin/redis-server {{redis_path}}/conf/service/{{service_name}}-{{service_port}}.conf"

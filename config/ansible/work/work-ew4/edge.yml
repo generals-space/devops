@@ -1,0 +1,9 @@
+- hosts: docker
+  remote_user: gluon
+  vars:
+    serviceName: edge
+    pkgName: ew4_edge_server
+  roles:
+    ## 注意: 向角色对象中传入多个变量时的方式
+    - {role: common, "{{serviceName}}", "{{pkgName}}", "{{version}}"}
+    - {role: service, "{{serviceName}}", "{{pkgName}}", "{{version}}"}

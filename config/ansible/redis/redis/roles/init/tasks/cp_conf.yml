@@ -1,0 +1,9 @@
+## copy模块拷贝目录不靠谱, 虽然是递归操作, 
+## 但如果目录下没有文件, 那就不会拷贝这个目录了
+- name: 拷贝配置文件
+  copy: src={{cfg_file}} dest={{tmp_path}}
+- name: 解压到redis
+  unarchive: src={{tmp_path}}/{{cfg_file}} dest={{redis_path}} copy=no
+- name: 清理工作
+  ## command: rm {{tmp_path}}{{ cfg_file}}
+  file: path={{tmp_path}}/{{cfg_file}} state=absent

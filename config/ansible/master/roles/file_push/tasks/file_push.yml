@@ -1,0 +1,42 @@
+## function: 拷贝文件到远程主机目标目录并解压
+
+## If there is an object already existed in $tmp_path, remove it first or copy may be failed.
+-   name: clear before copying
+    file: path={{tmp_path}}/{{item.value.name}} state=absent
+    ignore_errors: True
+
+## copy from local or download url
+-   name: Copying {{item.key}} from local,
+    copy: src={{item.value.src_path}} dest={{tmp_path}}
+    when: item.value.is_url == 'no'
+-   name: Downloading {{item.key}} from url
+    get_url: url={{item.value.src_path}} dest={{tmp_path}}
+    when: item.value.is_url == 'yes'
+
+## unpack
+## -   name: create dirs for unpack
+##     file: path={{tmp_path}}/{{item.key}} state=directory mode={{default_permission}}
+##     when: item.value.need_unpack == 'yes'    
+-   name: Unpacking
+    ## unarchive need 'copy=no', thought I don't know why
+    unarchive: src={{tmp_path}}/{{item.value.name}} dest={{tmp_path}}  copy=no
+    when: item.value.need_unpack == 'yes'
+
+## If there is an object already existed in $dst_path, remove it first.
+-   name: Clear for moving to target path
+    file: path={{item.value.dst_path}} state=absent
+    ignore_errors: True
+-   name: Move to dst path
+    command: mv {{tmp_path}}/{{item.key}} {{item.value.dst_path}}
+
+## Clear, at most time you just need clear the compressed package
+-   name: Clearing
+    file: path={{tmp_path}}/{{item.value.name}} state=absent
+    when: item.value.need_clear == 'yes'
+    ignore_errors: True
+
+## notify outter handlers
+-   name: Completing
+    shell: echo 'Completing'
+    notify: "{{item.value.with_notify}}"
+    when: item.value.with_notify is defined

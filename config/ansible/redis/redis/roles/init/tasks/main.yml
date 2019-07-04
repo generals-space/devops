@@ -1,0 +1,33 @@
+## 安装依赖
+- include: pre_install.yml
+
+
+## 一个task只能执行一个命令, 即, 一个name不能搭配多个模块
+- name: 拷贝redis安装包, 名称类似redis-3.0.7.tar.gz
+  copy: src={{pkg_name}}-{{pkg_version}}{{pkg_suffix}} dest={{tmp_path}}
+##- name: 拷贝文件服务器上的安装包到目标服务器, pkg_name可以是一个url
+##  get_url: url={{src_addr}}/{{pkg_name}}-{{pkg_version}}{{pkg_suffix}} dest={{tmp_path}}
+- name: 解压
+  ## ansible推荐使用内置模块, 虽然并没有感觉到什么特殊便利
+  ## command: tar -zxf {{tmp_path}}/{{pkg_name}}-{{pkg_version}}{{pkg_suffix}} -C /usr/local
+  ## unarchive需要加上copy=no这一句, 并且dest必须是一个已经存在的目录
+  unarchive: src={{tmp_path}}/{{pkg_name}}-{{pkg_version}}{{pkg_suffix}} dest=/tmp copy=no
+- name: 如果待安装目标目录存在, 删除
+  file: path={{redis_path}} state=absent
+- name: 移动, 重命名解压目录
+  command: mv {{tmp_path}}/{{pkg_name}}-{{pkg_version}} {{redis_path}}
+- name: 编译
+  ##command命令不好使, 管道,&&,||等指令只能使用shell命令
+  shell: cd {{redis_path}} && make
+- name: 清理工作
+  ##command: rm {{tmp_path}}/{{pkg_name}}
+  file: path={{tmp_path}}/{{pkg_name}}-{{pkg_version}}{{pkg_suffix}} state=absent
+
+- name: 拷贝管理脚本
+  copy: src=self-ops.sh dest={{redis_path}} 
+- name: 赋予管理脚本执行权限
+  file: path={{redis_path}}/self-ops.sh mode='u=rwx,g=rx,o=rx'
+- name: 执行管理脚本初始化
+  shell: cd {{redis_path}} && bash self-ops.sh init
+
+- include: cp_conf.yml 

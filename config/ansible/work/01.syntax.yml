@@ -1,0 +1,5 @@
+- hosts: docker
+  remote_user: root
+  tasks:
+  - name: 检验文件格式正确性
+    command: yum search ansible

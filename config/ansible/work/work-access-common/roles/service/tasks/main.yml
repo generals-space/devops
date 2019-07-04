@@ -1,0 +1,4 @@
+## 注意: 这种跨角色引用task yml文件的方法
+## 像变量可以放在common就可以被其他角色直接引用
+## 但tasks的yml文件和files下的文件需要指定相对路径
+- include: roles/common/tasks/cp_jar_file.yml

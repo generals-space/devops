@@ -1,0 +1,21 @@
+-   name: 设置python解析器版本
+    tags: init
+    set_fact: ansible_python_interpreter="/usr/bin/python2.6"
+-   name: 为redis安装依赖
+    tags: init
+    yum: name={{item}} state=latest
+    with_items:
+        - gcc
+        - gcc-c++
+        - make
+        - jemalloc
+        - jemalloc-devel
+    ignore_errors: True
+
+-   name: 编译redis
+    tags: init
+    shell: cd {{redis_path}} && make 
+
+-   name: 执行self-ops.sh, 初始化目录结构
+    tags: init
+    shell: "su - redis && cd {{redis_path}} && ./self-ops.sh init"

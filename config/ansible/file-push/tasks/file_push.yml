@@ -1,0 +1,61 @@
+## function: push files to remote hosts and unarchive
+
+## If there is an object already existed in $tmp_path, remove it first or copy may be failed.
+-   name: Clearing temp dirs
+    file: path={{tmp_path}} state=absent
+    ignore_errors: True
+-   name: Make temp dir for copying {{item.key}}
+    file: path={{tmp_path}} state=directory
+
+## copy from local or download url
+-   name: Copying {{item.key}} from local
+    copy: src={{item.value.src_path}} dest={{tmp_path}}
+    when: item.value.type is undefined or item.value.type == 'file'
+-   name: Downloading {{item.key}} from url
+    get_url: url={{item.value.src_path}} dest={{tmp_path}}
+    when: item.value.type is defined and item.value.type == 'url'
+-   name: parse {{item.key}} from template
+    template: src={{item.value.src_path}} dest={{item.value.dst_path}}
+    when: item.value.type is defined and item.value.type == 'tpl'
+
+-   name: Unpacking {{item.key}}
+    ## unarchive need 'copy=no', thought I don't know why
+    unarchive: src={{tmp_path}}/{{item.value.name}} dest={{tmp_path}}  copy=no
+    when: item.value.type is defined and item.value.need_unpack == 'yes'
+
+## If there is an object already existed in $dst_path, remove it first.
+## Note: if the file is a 'tpl', there could be some errors, just ignore them.
+-   name: Clear for moving {{item.key}} to target path
+    file: path={{item.value.dst_path}} state=absent
+    ignore_errors: True
+    when: item.value.type != 'tpl'
+-   name: Move {{item.key}} to dst path
+    shell: mv {{tmp_path}}/{{item.key}} {{item.value.dst_path}}
+    ignore_errors: True
+##  Checking whether the own specified is existed. Note, match it exactlly with a ':'. 
+-   name: Checking whether the owner {{item.value.with_owner}} is existed.
+    shell: "cat /etc/passwd | egrep \"^{{item.value.with_owner}}:\" | grep -v 'grep' | wc -l"
+    register: is_existed
+    when: item.value.with_owner is defined
+-   name: Create the user if not exist.
+    user: name={{item.value.with_owner}}
+    when: item.value.with_owner is defined and is_existed.stdout == '0'
+## Once you want to change the owner of the file, you need to define the 'group' too, or there will be an error. 
+-   name: Change {{item.key}} owner and group
+    file: path={{item.value.dst_path}} owner={{item.value.with_owner}} group={{item.value.with_owner}}
+    when: item.value.with_owner is defined
+    
+-   name: Change {{item.key}} permission
+    file: path={{item.value.dst_path}} mode={{item.value.with_permission}}
+    when: item.value.with_permission is defined
+## Clear, at most time you just need clear the compressed package
+-   name: Clearing {{item.key}}
+    file: path={{tmp_path}} state=absent
+    when: item.value.need_clear is undefined or item.value.need_clear == 'yes'
+    ignore_errors: True
+
+## notify outter handlers
+-   name: Completing {{item.key}}
+    shell: echo 'Completing'
+    notify: "{{item.value.with_notify}}"
+    when: item.value.with_notify is defined

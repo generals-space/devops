@@ -1,0 +1,24 @@
+- hosts: access-common
+  remote_user: root
+  vars:
+    item_name: access-common
+    item_user: access-common
+    jar_pkg: access-common-hs-video
+    ## jar_old_ver: '1.010'
+    jar_new_ver: '1.020'
+  roles:
+    - role: common
+    ## 注意: 向角色对象中传入多个变量时的方式
+    - {
+        role: service, 
+        "{{item_name}}", 
+        "{{item_user}}", 
+        "{{jar_pkg}}", 
+        "{{jar_old_ver}}", 
+        "{{jar_new_ver}}"
+      }
+    ##- {
+    ##    role: restart_service,
+    ##    "{{item_name}}", 
+    ##    "{{item_user}}"
+    ##}

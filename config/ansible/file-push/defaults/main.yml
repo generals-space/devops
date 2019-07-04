@@ -1,0 +1,4 @@
+---
+# defaults file for file-push
+tmp_path: /tmp/ansible.tmp45732
+default_permission: 755

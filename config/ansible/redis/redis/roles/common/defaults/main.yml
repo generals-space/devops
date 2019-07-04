@@ -1,0 +1,24 @@
+## redis相关变量
+redis_path: /usr/local/redis
+## 默认为非集群模式
+## no应该是ansible的关键字, 所以需要使用单引号括起来
+redis_cluster: 'no'
+
+## 源码包变量
+pkg_name: redis
+pkg_suffix: .tar.gz
+pkg_version: 3.0.7
+tmp_path: /tmp
+
+## 配置文件
+cfg_file: redis-cfg.tar.gz
+cfg_dir: conf
+
+## 新增服务
+service_name: service
+service_port: 6379
+service_append: ''
+auto_start: 'yes'
+
+## 资源服务器地址
+src_addr: 'http://192.168.166.220:10000/software/redis'

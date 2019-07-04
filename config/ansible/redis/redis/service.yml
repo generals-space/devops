@@ -1,0 +1,13 @@
+- hosts: redis
+  remote_user: root
+  vars:
+    service_name: skydata
+    service_port: 6379
+    service_append: ""
+  roles:
+    - common
+    - {role: service, 
+        "{{service_name}}", 
+        "{{service_port}}", 
+        "{{service_append}}"
+      }

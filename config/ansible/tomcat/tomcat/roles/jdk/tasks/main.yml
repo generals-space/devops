@@ -1,0 +1,7 @@
+
+- name: 拷贝环境变量配置文件
+  template: src=jdk-path.tpl dest=/tmp/jdk-path.tpl
+- name: 写入/etc/profile文件末尾
+  shell: 'cat /tmp/jdk-path.tpl >> /etc/profile'
+- name: 清理配置文件
+  file: path=/tmp/jdk-path.tpl state=absent

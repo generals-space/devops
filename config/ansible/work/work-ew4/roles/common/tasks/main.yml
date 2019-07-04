@@ -1,0 +1,5 @@
+- name: 下载安装包
+  get_url:
+    url: http://{{RES_IP}}{{RES_PATH['edge']}}/{{pkgName}}-{{version}}{{suffix}}
+    dest: "{{tmpPath}}/{{pkgName}}-{{version}}{{suffix}}"
+    

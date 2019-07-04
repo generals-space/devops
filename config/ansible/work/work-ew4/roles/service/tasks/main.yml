@@ -1,0 +1,5 @@
+- name: '卸载原包'
+  shell: source {{PRO_PATH['edge']}}/bin/activate && pip uninstall {{pkgName}} && deactivate
+
+- name: '安装新包'
+  shell: source {{PRO_PATH['edge']}}/bin/activate && pip install {{tmpPath}}{{pkgName}}-{{version}}{{suffix}} && deactivate

@@ -1,0 +1,5 @@
+---
+# tasks file for file-push
+-   include: file_push.yml param={{item}}
+    with_dict: "{{file_list}}"
+    when: file_list is defined

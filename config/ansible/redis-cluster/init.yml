@@ -1,0 +1,30 @@
+-   hosts: redis
+    remote_user: root
+    vars:
+        file_list:
+            redis-3.0.7:
+                name: redis-3.0.7.tar.gz
+                type: file
+                src_path: /opt/ansible-common/redis-3.0.7.tar.gz
+                dst_path: "{{redis_path}}"
+                need_unpack: 'yes'
+                need_clear: 'yes'
+                with_owner: redis
+            self-ops.sh:
+                name: self-ops.sh
+                type: file
+                src_path: roles/redis/files/self-ops.sh
+                dst_path: "{{redis_path}}/self-ops.sh"
+                with_owner: redis
+                with_permission: 755
+            conf:
+                name: conf.tar.gz 
+                type: file
+                src_path: roles/redis/files/conf.tar.gz
+                dst_path: "{{redis_path}}/conf"
+                need_unpack: 'yes'
+                need_clear: 'yes'
+    roles:
+        ## 向角色对象中传递变量的方法
+        - {role: generals-space.file-push, "{{file_list}}"}
+        - {role: redis, tags: ["init"]}

@@ -1,0 +1,3 @@
+-   name: 设置python解析器版本
+    tags: service
+    set_fact: ansible_python_interpreter="/usr/bin/python2.6"
